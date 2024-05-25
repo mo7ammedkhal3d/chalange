@@ -38,52 +38,21 @@ function findSeriesBinary($array, $B)
                 }
                 $avilNumOfConverting--;
                 $arrayCopy[$i] = 1;
-
-                echo "[ " ;
-                for($s= 0;$s<count($arrayCopy);$s++){
-                    echo " ".$arrayCopy[$s] ." ,";
-                }
-                echo "] <br>";
-    
-                echo " <br>";
-    
-                echo "avilNumOfConverting : ".$avilNumOfConverting."<br>";
-                echo "indexConverted : ".$indexConverted."<br>";
-                echo "oneISConverted :" ;
-                if($oneISConverted){
-                 echo "T <br>";
-                } else echo "F <br>";
-
-                echo " <br>";
-                echo "----------------------------------------"."<br>";
-
             }
         }
 
         $numOFSeries = CountSeriers($arrayCopy);
 
-        echo " <br>";
-        echo " <br>";
-        echo " <br>";
-        echo "numOFSeries : ".$numOFSeries."<br>";
-        echo "**********************"."<br>";
-        echo "maxSeries : ".$maxSeries."<br>";
-        echo "**********************"."<br>";
-        echo "firstIndex : ".$firstIndex."<br>";
-        echo "";
-
         if ($numOFSeries > $maxSeries) {
             $maxSeries = $numOFSeries;
             $firstIndex = $newIndex;
         } 
-        echo "**********************"."<br>";
-        echo "maxSeries : ".$maxSeries."<br>";
     }
 
     echo "[ " ;
     for($s= $firstIndex,$counter=0;$counter<$maxSeries;$s++,$counter++){
         echo "$s";
-        if($counter != $maxSeries) echo ","; 
+        if($counter != $maxSeries -1) echo ","; 
     }
     echo "]";
      
@@ -112,7 +81,7 @@ function CountSeriers($array)
 }
 
 
-  $A = [1,0,1,0,0,1,1,1,1];
+  $A = [1,0,1,0,0,1,1,1,1,1,0,0];
   $B = 2;
 
   findSeriesBinary($A,$B);
