@@ -5,7 +5,10 @@ $firstIndex = 0;
 function findSeriesBinary($array, $B)
 {
     global $firstIndex;
+
     $maxSeries = 0;
+
+    $OneSerieses =[];
     $indexConverted = -1;
     $oneISConverted = false;
 
@@ -57,7 +60,10 @@ function findSeriesBinary($array, $B)
             }
         }
 
-        $numOFSeries = CountSeriers($arrayCopy);
+        $OneSerieses [].+[
+        $numOFSeries = CountSeriers($arrayCopy),
+        $firInde = $firIndex
+        ];
 
         echo " <br>";
         echo " <br>";
@@ -77,9 +83,9 @@ function findSeriesBinary($array, $B)
     }
 
     echo "[ " ;
-    for($s= $firstIndex;$s<=$maxSeries+1;$s++){
+    for($s= $firstIndex,$counter=0;$counter<=$maxSeries;$s++,$counter++){
         echo "$s";
-        if($s != $maxSeries+1) echo ","; 
+        if($counter != $maxSeries) echo ","; 
     }
     echo "]";
      
@@ -109,7 +115,7 @@ function CountSeriers($array)
 }
 
 
-  $A = [1,0,1,0,0,1,1,1];
+  $A = [1,0,1,0,0,1,1,1,1];
   $B = 2;
 
   findSeriesBinary($A,$B);
