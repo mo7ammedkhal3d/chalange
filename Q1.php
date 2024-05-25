@@ -1,14 +1,14 @@
 <?php
 
+$newIndex = 0;
 $firstIndex = 0;
 
 function findSeriesBinary($array, $B)
 {
+    global $newIndex;
     global $firstIndex;
 
     $maxSeries = 0;
-
-    $OneSerieses =[];
     $indexConverted = -1;
     $oneISConverted = false;
 
@@ -60,10 +60,7 @@ function findSeriesBinary($array, $B)
             }
         }
 
-        $OneSerieses [].+[
-        $numOFSeries = CountSeriers($arrayCopy),
-        $firInde = $firIndex
-        ];
+        $numOFSeries = CountSeriers($arrayCopy);
 
         echo " <br>";
         echo " <br>";
@@ -77,19 +74,19 @@ function findSeriesBinary($array, $B)
 
         if ($numOFSeries > $maxSeries) {
             $maxSeries = $numOFSeries;
-        }
+            $firstIndex = $newIndex;
+        } 
         echo "**********************"."<br>";
         echo "maxSeries : ".$maxSeries."<br>";
     }
 
     echo "[ " ;
-    for($s= $firstIndex,$counter=0;$counter<=$maxSeries;$s++,$counter++){
+    for($s= $firstIndex,$counter=0;$counter<$maxSeries;$s++,$counter++){
         echo "$s";
         if($counter != $maxSeries) echo ","; 
     }
     echo "]";
      
-
 }
 
 
@@ -97,12 +94,12 @@ function CountSeriers($array)
 {
     $numOFSeries = 0;
     $numOFSeriesISAsign = false;
-    global $firstIndex;
+    global $newIndex;
     for ($i = 0; $i < count($array); $i++) {
         if ($array[$i] != 0){
             if(!$numOFSeriesISAsign){
                 $numOFSeriesISAsign = true;
-                $firstIndex = $i;
+                $newIndex = $i;
             }
             $numOFSeries++;
         } else {
